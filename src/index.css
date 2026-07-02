@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cream: #FAF6EE;
+  --color-brand-cream-dark: #EDE5D4;
+  --color-brand-red: #8B2332;
+  --color-brand-red-light: #A53040;
+  --color-brand-gold: #D4A843;
+  --color-brand-gold-light: #E0BC5E;
+  --color-brand-green: #2D5A3D;
+  --color-brand-green-light: #3D7A53;
+  --color-brand-brown: #3A2518;
+  --color-brand-brown-light: #5A3D2D;
+  --color-brand-charcoal: #2C2C2C;
+  --color-brand-charcoal-light: #4a4a4a;
+
+  --font-heading: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply font-body text-brand-charcoal bg-brand-cream antialiased;
+    margin: 0;
+  }
+
+  ::selection {
+    @apply bg-brand-gold/25;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-green ring-2 ring-brand-gold/40;
+  }
+}
