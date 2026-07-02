@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { siteConfig } from "../data/siteConfig";
+import heroImg from "../assets/chip-wagon-storefront.png";
 
 const badges: { label: string; icon: ReactNode }[] = [
   {
@@ -41,9 +42,12 @@ const badges: { label: string; icon: ReactNode }[] = [
 export default function Hero() {
   return (
     <section className="relative flex min-h-[85vh] items-center overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-red via-brand-brown to-brand-red" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(212,168,67,0.25),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(45,90,61,0.2),transparent_60%)]" />
+      <img
+        src={heroImg}
+        alt="Eva's Chip Wagon storefront on Bank Street"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-r from-brand-brown/90 via-brand-brown/75 to-brand-brown/50" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
         <div className="max-w-2xl">

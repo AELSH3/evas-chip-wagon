@@ -1,4 +1,8 @@
 import { siteConfig } from "../data/siteConfig";
+import baconCheeseburgerImg from "../assets/bacon-cheeseburger.png";
+import cabbageRollsImg from "../assets/cabbage-rolls.png";
+import burgerImg from "../assets/burger.png";
+import cabbageRollCloseImg from "../assets/cabbage-roll-close.png";
 
 const labelColors: Record<string, string> = {
   "Fan Favourite": "bg-brand-red text-white",
@@ -7,12 +11,7 @@ const labelColors: Record<string, string> = {
   Classic: "bg-brand-brown text-white",
 };
 
-const gradients = [
-  "from-brand-red/80 to-brand-brown/90",
-  "from-brand-green/80 to-brand-brown/90",
-  "from-brand-gold/70 to-brand-brown/90",
-  "from-brand-red/70 to-brand-green/80",
-];
+const dishImages = [baconCheeseburgerImg, cabbageRollsImg, burgerImg, cabbageRollCloseImg];
 
 export default function FeaturedDishes() {
   return (
@@ -37,21 +36,12 @@ export default function FeaturedDishes() {
               key={dish.name}
               className="group overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg"
             >
-              <div className={`relative flex h-52 items-center justify-center bg-gradient-to-br ${gradients[i % gradients.length]}`}>
-                <svg
-                  className="h-16 w-16 text-white/30"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
-                  <path d="M7 2v20" />
-                  <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" />
-                </svg>
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={dishImages[i % dishImages.length]}
+                  alt={dish.name}
+                  className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
                 <span
                   className={`absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-semibold ${
                     labelColors[dish.label] ?? "bg-brand-green text-white"
